@@ -26,6 +26,7 @@
                                 <th>Absen Masuk</th>
                                 <th>Absen Pulang</th>
                                 <th>Status</th>
+                                <th>Aksi</th>
                             </thead>
                             <tbody>
                                 <tr>
@@ -47,17 +48,17 @@
                                             <form method="post" action="<?= base_url('absensi/absen') ?>"  enctype="multipart/form-data">
                                                 <input type="hidden" name="inpgambar2" id="inpgambar2">
                                                 <input type="hidden" name="inpket" value="pulang">
-                                                <button type="<?= ($absen == 1) ? 'button' : 'submit' ?>" class="btn btn-primary btn-sm btn-fill">Absen Pulang</button>
+                                                <button type="<?= ($absen2 == 1) ? 'button' : 'submit' ?>" class="btn btn-primary btn-sm btn-fill">Absen Pulang</button>
                                             </form>
-                                        </td>
+										</td>
+										<form action="<?= base_url('absensi/simpan_status') ?>" method="post">
                                         <td>
-                                            <form action="<?= base_url('absensi/simpan_status') ?>" method="post">
                                             <input type="text" name="status" value="<?=isset($_POST['Status']) ? $_POST['Status'] : ''?>"/>
-                                            <div class="row">
-                                            <input type="submit" name="submit" value="Simpan"/>
-                                            </div>
-                                        </div>
-                                        </td>
+										</td>
+										<td>
+											<input type="submit" name="submit" value="Simpan"/>
+										</td>
+										</form>
                                     <?php endif; ?>
                                 </tr>
                             </tbody>

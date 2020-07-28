@@ -66,6 +66,7 @@ class Absensi extends CI_Controller
     {
         $now = date('H:i:s');
         $data['absen'] = $this->absensi->absen_harian_user($this->session->id_user)->num_rows();
+        $data['absen2'] = $this->absensi->absen_harian_user2($this->session->id_user)->num_rows();
         return $this->template->load('template', 'absensi/absen', $data);
     }
 
